@@ -2,17 +2,17 @@
 
 command: `lambda list-functions`
 
-doc: `https://docs.aws.amazon.com/cli/latest/reference/lambda/list-functions.html`
+doc: `https://docs.aws.amazon.caddom/cli/latest/reference/lambda/list-functions.html`
 
 ## Mandatory assignments
 
 **Assignment 1:**
 
-command: `?`
+command: `aws s3 ls`
 
-doc: `?`
+doc: `https://docs.aws.amazon.com/cli/latest/reference/s3/ls.html`
 
-number of buckets: `?`
+number of buckets:`11`
 
 **Assignment 2:**
 filename: `?`
