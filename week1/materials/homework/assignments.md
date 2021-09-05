@@ -15,7 +15,7 @@ doc: `https://docs.aws.amazon.com/cli/latest/reference/s3/ls.html`
 number of buckets:`11`
 
 **Assignment 2:**
-filename: `?`
+filename: `christopher-was-here.json`
 
 ## Optional Assignments
 
