@@ -1,7 +1,8 @@
 import useProducts from "../hooks/useProducts";
 
+
 function Products() {
-  const { products, cart, addProduct, removeProduct } = useProducts();
+  const { products, cart, addProduct, removeProduct, calculateSum } = useProducts();
 
   const isInCart = (product) => {
     return !cart.find((item) => item.id === product.id);
@@ -48,7 +49,7 @@ function Products() {
       </div>
       <form>
         <div className="form-group mt-4 col-md-4">
-          <p className="mt-4">You will be charged: ?</p>
+          <p className="mt-4">You will be charged: {calculateSum()}?</p>
 
           <label htmlFor="exampleInputEmail1">Email address</label>
           <input
