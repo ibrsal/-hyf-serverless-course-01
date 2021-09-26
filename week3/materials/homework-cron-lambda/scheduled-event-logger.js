@@ -1,6 +1,6 @@
 // For part II:
-// const { CloudWatchClient } = require("@aws-sdk/client-cloudwatch");
-// const { GetMetricDataCommand } = require("@aws-sdk/client-cloudwatch");
+const { CloudWatchClient } = require("@aws-sdk/client-cloudwatch");
+const { GetMetricDataCommand } = require("@aws-sdk/client-cloudwatch");
 
 exports.scheduledEventLoggerHandler = async () => {
   // For part I
@@ -11,41 +11,41 @@ exports.scheduledEventLoggerHandler = async () => {
     })
     .join("");
 
-  return weirdString;
+  return saneString;
 
-  // For part II:
-  //   const cloudwatchClient = new CloudWatchClient({ region: "us-east-1" });
+  //For part II:
+  const cloudwatchClient = new CloudWatchClient({ region: "us-east-1" });
 
-  //   let startDate = new Date();
-  //   startDate.setMonth(startDate.getMonth() - 3);
+  let startDate = new Date();
+  startDate.setMonth(startDate.getMonth() - 3);
 
-  //   const params = {
-  //     StartTime: startDate,
-  //     EndTime: new Date(),
-  //     MetricDataQueries: [
-  //       {
-  //         Id: "counts",
-  //         MetricStat: {
-  //           Metric: {
-  //             Dimensions: [
-  //               {
-  //                 Name: "ApiName",
-  //                 Value: "?",
-  //               },
-  //             ],
-  //             MetricName: "?",
-  //             Namespace: "?",
-  //           },
-  //           Period: 300,
-  //           Stat: "?",
-  //         },
-  //       },
-  //     ],
-  //   };
+  const params = {
+    StartTime: startDate,
+    EndTime: new Date(),
+    MetricDataQueries: [
+      {
+        Id: "counts",
+        MetricStat: {
+          Metric: {
+            Dimensions: [
+              {
+                Name: "ApiName",
+                Value: "good-green-groceries-api",
+              },
+            ],
+            MetricName: "Count",
+            Namespace: "AWS/ApiGateway",
+          },
+          Period: 300,
+          Stat: "Sum",
+        },
+      },
+    ],
+  };
 
-  //   const results = await cloudwatchClient.send(
-  //     new GetMetricDataCommand(params)
-  //   );
+  const results = await cloudwatchClient.send(
+    new GetMetricDataCommand(params)
+  );
 };
 
 function nextChar(c) {

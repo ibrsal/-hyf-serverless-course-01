@@ -4,7 +4,7 @@
     "version": "0.0.1",
     "private": true,
     "dependencies": {
-        "@aws-sdk/client-cloudwatch": "^3.33.0"
+        "@aws-sdk/client-cloudwatch": "^3.27.0"
     },
     "devDependencies": {
         "jest": "^26.6.3"
