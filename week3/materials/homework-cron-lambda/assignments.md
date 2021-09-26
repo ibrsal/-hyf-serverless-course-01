@@ -16,4 +16,8 @@ doc: `https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resourc
 rubbish string: `"Ifmmp-!IZG\""`
 
 **Assignment 4:**
-total count: `?`
+total count: `1`
+
+![imagename](path)
+![count](img/count.png)
+![latency](img/latency.png)
