@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+var total;
 const productsData = [
   {
     id: 1,
@@ -35,19 +35,48 @@ let initialProducts = productsData.map((item) => {
 });
 
 function useProducts() {
+  
   const [products] = useState(initialProducts);
   const [cart, setCart] = useState([]);
+  
 
   const addProduct = (product) => {
     let newCart = cart.concat(product);
     setCart(newCart);
   };
 
+  const calculateSum = () => {
+    let total = 0;
+    for (let i = 0; i < cart.length; i++) {
+      total += parseInt(cart[i].price)
+    }
+    return total
+  };
+
   const removeProduct = (product) => {
     setCart(cart.filter((item) => item.id != product.id));
   };
 
-  return { products, cart, addProduct, removeProduct };
+  return { products, cart, addProduct, removeProduct, calculateSum };
 }
 
 export default useProducts;
+
+
+/*
+// 1 
+const calculatTotal = () => {
+  return cart.reduce((carry, product) => {
+    return carry + parseInt(product.price)
+  }, 0)
+}
+
+
+// 2 
+const calculatTotal2 = () => {
+let initialValue = 0
+for ( let i in cart ) {
+  initalValue += parseInt(cart[i].price)
+}
+return inialValue
+*/
