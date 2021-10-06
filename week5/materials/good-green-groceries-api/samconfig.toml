@@ -1,0 +1,12 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "ibr-week2"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1fh54iz3nan0g"
+s3_prefix = "ibr-week2"
+region = "us-east-1"
+capabilities = "CAPABILITY_IAM"
+parameter_overrides = "SubscriptionsTableName=\"ibrtable\""
+image_repositories = []
+confirm_changeset = true
